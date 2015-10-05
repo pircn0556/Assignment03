@@ -63,19 +63,49 @@ public class A1Q2 {
                     karel.turnLeft();
                 } else {
                     if (karel.getDirection() == Direction.EAST) {
-                        karel.turnLeft();
-                        karel.turnLeft();
-                        karel.turnLeft();
-                        karel.move();
-                        karel.turnLeft();
-                        karel.turnLeft();
-                        karel.turnLeft();
+                            karel.turnLeft();
+                            karel.turnLeft();
+                            karel.turnLeft();
+                           if(karel.frontIsClear()) {
+                            karel.move();
+                            karel.turnLeft();
+                            karel.turnLeft();
+                            karel.turnLeft();
+                           }
+                               
+                    }else{
+                        break;
                     }
-
                 }
-
             }
-
+            
         }
+        while(true){
+            if(karel.getDirection() == Direction.WEST){
+                karel.move();
+            }else{
+                karel.turnLeft();
+            }
+            if(karel.getAvenue()==0){
+                break;
+            }
+        }
+        while(true){
+            if(karel.getDirection()==Direction.NORTH){
+                karel.move();
+            }else{
+                karel.turnLeft();
+            }
+            if(karel.getStreet()==0){
+                break;
+            }
+        }
+        karel.turnLeft();
+        karel.turnLeft();
+        karel.turnLeft();
+        
+            
+                
     }
-}
+    }
+
